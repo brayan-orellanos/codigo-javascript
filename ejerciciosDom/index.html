@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stilos.css">
+    <link href="dist/hamburgers.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="body" data-theme>
+    <div id="msg" class="msg-ocultar"></div>
+    <div class="lds-spinner loader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <aside>
+        <nav class="menu oculto">
+            <ul class="list-menu">
+                <li>
+                    <a href="#section1" class="item-menu">Reloj y alarma</a>
+                </li>
+                <li>
+                    <a href="#section2" class="item-menu">Eventos del teclado</a>
+                </li>
+                <li>
+                    <a href="#section3" class="item-menu">Decremento</a>
+                </li>
+                <li>
+                    <a href="#section4" class="item-menu">Responsive con js</a>
+                </li>
+                <li>
+                    <a href="#section5" class="item-menu">tester</a>
+                </li>
+                <li>
+                    <a href="#section6" class="item-menu">Deteccion de dispositivos</a>
+                </li>
+                <li>
+                    <a href="#section7" class="item-menu">Deteccion de camara</a>
+                </li>
+            </ul>
+        </nav>
+
+    </aside>
+
+    <main>
+        <header class="header">
+            <h1 class="tittle">Ejercicios del DOM</h1>
+            <progress class="progreso" value="0"></progress>
+        </header>
+
+        <section id="section1" class="section">
+            <div class="container">
+                <h3>Reloj y alarma</h3>
+                <div class="contener">
+                    <p class="hora"></p>
+                    <audio src="/multi/efecto-de-sonido-alarma-reloj-despertador.mp3" loop type="audio/mpeg"
+                        class="audio"></audio>
+                    <button class="inicio iniciar-reloj">Iniciar reloj</button>
+                    <button class="fin detener-reloj">Detener reloj</button>
+                    <button class="inicio iniciar-alarma">Iniciar alarma</button>
+                    <button class="fin detener-alarma">Detener alarma</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="section2" class="section">
+            <div class="container">
+                <h3>Eventos del teclado</h3>
+                <div class="cuadro">
+                    <div class="circulo"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section3" class="section">
+            <div class="container">
+                <h3>Decremento</h3>
+                <p class="dec"></p>
+            </div>
+        </section>
+
+        <section id="section4" class="section">
+            <div class="container">
+                <h3>Responsive con js</h3>
+                <div id="youtube"></div>
+                <div id="gMapa"></div>
+            </div>
+        </section>
+
+        <section id="section5" class="section">
+            <div class="conatiner">
+                <h3>Tester</h3>
+                <form action="" id="form-tester">
+                    <div>
+                        <label for="url">Url</label>
+                        <input type="url" name="url" id="url" placeholder="URL" required>
+                    </div>
+                    <div>
+                        <label for="alto">Alto</label>
+                        <input type="text" name="alto" id="alto" placeholder="ALTO" required>
+                    </div>
+                    <div>
+                        <label for="ancho">Ancho</label>
+                        <input type="text" name="ancho" id="ancho" placeholder="ANCHO" required>
+                    </div>
+                    <input name="abrir" type="submit" value="Abrir" class="btn-abrir">
+                    <input name="cerrar" type="button" value="Cerrar" class="btn-cerrar">
+                </form>
+            </div>
+        </section>
+
+        <section id="section6" class="section">
+            <div class="container ct2 xd">
+                <h3>Deteccion de dispositivos</h3>
+                <div class="contenido"></div>
+            </div>
+        </section>
+
+        <section id="section7" class="section">
+            <div class="container">
+                <h3>Deteccion de camara</h3>
+                <video src="" id="cam"></video>
+            </div>
+        </section>
+
+        <button class="arrow-up hidden">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDUxMi4xNzEgNTEyLjE3MSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGcgdHJhbnNmb3JtPSJtYXRyaXgoLTEsLTEuMjI0NjQ2Nzk5MTQ3MzUzMmUtMTYsMS4yMjQ2NDY3OTkxNDczNTMyZS0xNiwtMSw1MTIuMTcwMzI2MjMyOTEwMiw1NTIuMTcxOTk3MDcwMzEyNSkiPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPHBhdGggZD0iTTQ3OS4wNDYsMjgzLjkyNWMtMS42NjQtMy45ODktNS41NDctNi41OTItOS44NTYtNi41OTJIMzUyLjMwNVYxMC42NjdDMzUyLjMwNSw0Ljc3OSwzNDcuNTI2LDAsMzQxLjYzOCwwSDE3MC45NzEgICAgYy01Ljg4OCwwLTEwLjY2Nyw0Ljc3OS0xMC42NjcsMTAuNjY3djI2Ni42NjdINDIuOTcxYy00LjMwOSwwLTguMTkyLDIuNjAzLTkuODU2LDYuNTcxYy0xLjY0MywzLjk4OS0wLjc0Nyw4LjU3NiwyLjMwNCwxMS42MjcgICAgbDIxMi44LDIxMy41MDRjMi4wMDUsMi4wMDUsNC43MTUsMy4xMzYsNy41NTIsMy4xMzZzNS41NDctMS4xMzEsNy41NTItMy4xMTVsMjEzLjQxOS0yMTMuNTA0ICAgIEM0NzkuNzkzLDI5Mi41MDEsNDgwLjcxLDI4Ny45MTUsNDc5LjA0NiwyODMuOTI1eiIgZmlsbD0iIzAwMDAwMCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiI+PC9wYXRoPgoJPC9nPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjwvZz48L3N2Zz4="
+                class="arrow-img" />
+        </button>
+
+        <button class="btn hamburger--arrow hamburger--collapse" type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+
+        <button class="mode moon"></button>
+    </main>
+
+    <script src="js/index.js" type="module"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+
+</html>

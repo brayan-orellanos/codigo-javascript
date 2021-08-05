@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo del DOM</title>
+
+    <style>
+        :root {
+            --yellow: yellow;
+            --darkColor: #222;
+        }
+
+        body {
+            background-color: antiquewhite;
+        }
+
+        .cards {
+            border: 4px solid black;
+            padding: 1rem;
+            margin: 1rem;
+        }
+
+        .card {
+            display: inline-block;
+            background-color: var(--darkColor);
+            color: var(--yellow);
+        }
+
+        .card figcaption {
+            padding: 1rem;
+        }
+
+        .rotate-45 {
+            transform: rotate(45deg);
+        }
+
+        .rotate-135 {
+            transform: rotate(135deg);
+        }
+
+        .opacity-80 {
+            opacity: 80%;
+        }
+
+        .sepia {
+            filter: sepia(1);
+        }
+
+        .flujo div {
+            padding: 4rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .uno {
+            background-color: brown;
+        }
+
+        .dos {
+            background-color: yellow;
+        }
+
+        .tres {
+            background-color: gold;
+        }
+
+    </style>
+</head>
+<body>
+    <h3>Manejo del Dom</h3>
+
+    <p id="que-es">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur adipisci autem ducimus quae voluptatem quod. Temporibus aliquid cumque deserunt ipsa modi nemo. Nemo cumque, harum magnam labore rerum illum velit.
+    </p>
+
+    <nav id="menu">
+        <ul>
+            <li><a href="#">seccion 1</a></li>
+            <li><a href="#">seccion 2</a></li>
+            <li><a href="#">seccion 3</a></li>
+            <li><a href="#">seccion 4</a></li>
+        </ul>
+    </nav>
+    
+    <input type="text" name="nombre" placeholder="nombre">
+    <a href="dom2.html" style="background-color: brown;" class="link-dom" data-description="Document Object Model">DOM</a>
+
+    <section class="cards">
+        <figure class="card">
+            <img src="http://placeimg.com/200/200/tech" alt="teach">
+            <figcaption>teach</figcaption>
+        </figure>
+
+        <figure class="card">
+            <img src="http://placeimg.com/200/200/animals" alt="animal">
+            <figcaption>animal</figcaption>
+        </figure>
+
+        <figure class="card">
+            <img src="http://placeimg.com/200/200/people" alt="people">
+            <figcaption>people</figcaption>
+        </figure>
+
+        <figure class="card">
+            <img src="http://placeimg.com/200/200/arch" alt="arch">
+            <figcaption>arch</figcaption>
+        </figure>
+    </section>
+
+    <template id="template-card">
+        <figure class="card">
+            <img>
+            <figcaption></figcaption>
+        </figure>
+    </template>
+
+    <section class="flujo">
+        <div class="uno">
+            1
+            <div class="dos">
+                2
+                <div class="tres">
+                    3
+                    <a href="https://www.youtube.com/watch?v=2LgnPW_VZYU&list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA&index=76" rel="noopener" target="_blank">Youtube</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </br>
+    <button id="button">saludo</button>
+
+
+    <h3>Manejo del BOM</h3>
+
+    <button class="btnAbrir">abrir ventana</button>
+    <button class="btnCerrar">cerrar ventana</button>
+    <button class="btnImprimir">imprimir ventana</button>
+
+    
+    <script src="scriptss/domMircha.js"></script>
+</body>
+</html>
+

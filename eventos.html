@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos/eventos.css">
+</head>
+<body>
+    <video class="haloVideo" width="500" controls>
+        <source src="multi/video.mp4" type="video/mp4">
+    </video>
+
+    <div class="container">
+        <h1 class="tittle">Mi formulario</h1>
+        <form name="formulario" action="">
+
+            <div class="input-group">
+                <input type="text" name="nombre" placeholder="nombre" id="nombre">
+            </div>
+
+            <div class="input-group">
+                <input type="email" name="email" id="email" placeholder="email">
+            </div>
+
+            <div class="input-group">
+                <label for="colorFavorite">marca esta opcion si tienes un color favorito</label>
+                <input type="checkbox" name="colorFavorite" id="colorFavorite">
+            </div>
+
+            <p class="disabled" id="titleColor">selecciona tu color favotiro</p>
+
+            <div class="input-group radio-buttons disabled" id="inputs">
+                <input type="radio" name="color" id="verde" disabled="disabled"><label for="verde">verde</label>
+                <input type="radio" name="color" id="azul" disabled="disabled"><label for="azul">azul</label>
+                <input type="radio" name="color" id="rojo" disabled="disabled"><label for="rojo">rojo</label>
+            </div>
+
+            <input type="submit" value="Enviar">
+            <span class="button" id="button">agregar evento</span>
+            <span class="button" id="button2">remover evento</span>
+            <span class="button" id="button3">crear parrafo</span>
+        </form>
+
+        <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam iure in praesentium ipsam, voluptate dolorem enim magnam libero accusantium corrupti excepturi nulla possimus maiores. Iste tempore earum quia sit corrupti!</p>
+    </div>
+    <script src="scriptss/eventos.js"></script>
+</body>
+</html>

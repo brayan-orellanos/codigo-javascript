@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    padding: 50px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    padding: 10px;
+}
+
+form {
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.input-group {
+    margin: 10px 0;
+}
+
+input[type="text"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+}
+
+input[type="radio"] {
+    margin-left: 10px;
+}
+
+input[type="radio"]:first-child {
+    margin-left: 0;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background: #24b080;
+    padding: 10px;
+    border: 1px solid #24b080;
+    cursor: pointer;
+    color: white;
+    margin-top: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.button {
+    width: 10%;
+    display: inline-block;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #24b080;
+    cursor: pointer;
+    color: #24b080;
+    margin: 15px auto;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.button:hover {
+    background: #24b080;
+    color: wheat;
+}
+
+.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+    padding: 5px;
+}
+
+.disabled input, .disabled label {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.enabled {
+    color: #ccc;
+    padding: 5px;
+}
+
+.enabled input, .denable label {
+    color: #ccc;
+    cursor: pointer;
+}
+
+.texto, .text {
+    width: 20%;
+    background: #24b080;
+    padding: 10px;
+    border: 1px solid #24b080;
+    color: white;
+    margin: 10px 10px;
+}
+
+.flex {
+    display: flex;
+}
+
+h2 {
+    padding-top: 20px;
+}
+
+video {
+    margin: 0 auto;
+    display: block;
+    margin-top: 20px;
+}
