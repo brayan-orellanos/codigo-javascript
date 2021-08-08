@@ -11,6 +11,9 @@ import deteccion from "./deteccion_dispositivo.js"
 import loader from "./loader.js"
 import conexion from "./conexion.js"
 import camara from "./dteccion_camara.js"
+import getLocation from "./geolocation.js"
+import filtro from "./filtro.js"
+import sorteo from "./sorteo.js"
 
 
 
@@ -38,6 +41,9 @@ d.addEventListener('DOMContentLoaded', e => {
     deteccion('.contenido')
     AOS.init()
     camara('cam')
+    getLocation('location')
+    filtro('#buscar', '.card', '.reset')
+    sorteo('.list-sorteo', '.btn-sorteo')
 })
 
 

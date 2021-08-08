@@ -29,7 +29,7 @@ export function scroll(arrow, header, section) {
 
 
         // ocultar y mostrar contenido
-        if($section.getBoundingClientRect().top - $section.getBoundingClientRect().height <= -80) {
+        if($section.getBoundingClientRect().top - $section.getBoundingClientRect().height <= -150) {
             $contenido.classList.replace('ct2', 'ct')
         } else {
             $contenido.classList.replace('ct', 'ct2')
@@ -46,7 +46,7 @@ export function scroll(arrow, header, section) {
     })
 }
 
-
+// barra de progreso
 export function progress(progress) {
     const $body = d.querySelector('.body'),
         $progress = d.querySelector(progress)

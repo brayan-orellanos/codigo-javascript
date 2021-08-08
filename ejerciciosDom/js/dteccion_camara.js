@@ -2,17 +2,11 @@ const d = document,
     n = navigator
 
 export default function camara(cam) {
-    const $video = d.querySelector(cam)
+    const $video = d.getElementById(cam) 
+    console.log(navigator.geolocation)
 
     if(n.mediaDevices.getUserMedia) {
-        let contrains = { audio: true, 
-            video: 
-                { 
-                facingMode: { exact: "environment" },     
-                width: { min: 1024, ideal: 1280, max: 1920 },
-                height: { min: 776, ideal: 720, max: 1080 } 
-                }
-            }
+        let contrains = { audio: true, video: true}
 
         n.mediaDevices.getUserMedia(contrains)
         .then((stream) => {
@@ -22,4 +16,5 @@ export default function camara(cam) {
         })
         .catch((err) => console.log(`sucedio el siguiente error: ${err}`))
     }
+
 }

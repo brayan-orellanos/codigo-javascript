@@ -4,8 +4,8 @@ let y = 0
 
 export function teclado(e) {
 
-    console.log(e.keyCode)
-    console.log(e)
+    // console.log(e.keyCode)
+    // console.log(e)
     if(e.ctrlKey && e.keyCode === 67) {
         confirm('comandos xd')
     }
@@ -26,7 +26,7 @@ export function movimiento(e, ball, cuadro) {
           limitBall = $ball.getBoundingClientRect(),
           limitCuadro = $cuadro.getBoundingClientRect()
 
-    console.log(limitBall, limitCuadro)
+    // console.log(limitBall, limitCuadro)
 
     switch(e.keyCode) {
         case 37:

@@ -11,21 +11,6 @@
 </head>
 
 <body class="body" data-theme>
-    <div id="msg" class="msg-ocultar"></div>
-    <div class="lds-spinner loader">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
     <aside>
         <nav class="menu oculto">
             <ul class="list-menu">
@@ -50,12 +35,37 @@
                 <li>
                     <a href="#section7" class="item-menu">Deteccion de camara</a>
                 </li>
+                <li>
+                    <a href="#section8" class="item-menu">Deteccion geolocacion</a>
+                </li>
+                <li>
+                    <a href="#section9" class="item-menu">Filtro</a>
+                </li>
+                <li>
+                    <a href="#section10" class="item-menu">Sorteo digital</a>
+                </li>
             </ul>
         </nav>
-
     </aside>
 
     <main>
+        <div id="msg" class="msg-ocultar"></div>
+
+        <div class="lds-spinner loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
         <header class="header">
             <h1 class="tittle">Ejercicios del DOM</h1>
             <progress class="progreso" value="0"></progress>
@@ -133,6 +143,71 @@
             <div class="container">
                 <h3>Deteccion de camara</h3>
                 <video src="" id="cam"></video>
+            </div>
+        </section>
+
+        <section id="section8" class="section">
+            <div class="container">
+                <h3>Deteccion geolocacion</h3>
+                <div id="location"></div>
+            </div>
+        </section>
+
+        <section id="section9" class="cards section">
+            <div class="container">
+                <h3>Filtro</h3>
+                <form class="busqueda">
+                    <input type="search" placeholder="Buscar" name="buscar" id="buscar" autocomplete="off">
+                    <button class="reset">X</button>
+                </form>
+                <div class="gr">
+                    <figure class="card">
+                        <img src="http://placeimg.com/200/200/tech" alt="teach">
+                        <figcaption>teach</figcaption>
+                    </figure>
+
+                    <figure class="card">
+                        <img src="http://placeimg.com/200/200/animals" alt="animal">
+                        <figcaption>animal</figcaption>
+                    </figure>
+
+                    <figure class="card">
+                        <img src="http://placeimg.com/200/200/people" alt="people">
+                        <figcaption>people</figcaption>
+                    </figure>
+
+                    <figure class="card">
+                        <img src="http://placeimg.com/200/200/arch" alt="arch">
+                        <figcaption>arch</figcaption>
+                    </figure>
+
+                    <figure class="card">
+                        <img src="http://placeimg.com/200/200/nature" alt="arch">
+                        <figcaption>nature</figcaption>
+                    </figure>
+
+                    <figure class="card">
+                        <img src="http://placeimg.com/200/200/any" alt="arch">
+                        <figcaption>any</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="section10" class="section">
+            <h3>Sorteo digital</h3>
+            <div class="container">
+                <ul class="list-sorteo">
+                    <li>Javascript</li>
+                    <li>Php</li>
+                    <li>Java</li>
+                    <li>C</li>
+                    <li>Python</li>
+                    <li>Ruby</li>
+                    <li>Go</li>
+                    <li>Perl</li>
+                </ul>
+                <button class="btn-sorteo">Obtener ganador</button>
             </div>
         </section>
 

@@ -9,6 +9,8 @@
     --primary-color: rgb(198, 198, 5);
     --secundary-color: rgb(20, 20, 20);
     --background: rgb(230, 230, 230);
+    --yellow: yellow;
+    --darkColor: #222;
 }
 
 html {
@@ -72,7 +74,6 @@ h3 {
     text-align: center;
     font-size: 2rem;
     padding-top: 5.5rem;
-    margin-bottom: 4rem;
     overflow: hidden;
 }
 
@@ -156,6 +157,7 @@ h3 {
     justify-content: center;
     align-content: center;
     list-style: none;
+    overflow-y: auto;
 }
 
 .item-menu {
@@ -239,7 +241,10 @@ h3 {
 
 .progreso {
     width: 100%;
-    height: 6px;
+    height: 8px;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
 }
 
 input[type=submit],
@@ -461,4 +466,69 @@ input[type=button] {
     -moz-transition: transform .2s ease;
     -ms-transition: transform .2s ease;
     -o-transition: transform .2s ease;
+}
+
+/* enlace mapa */
+
+.e-mapa {
+    text-decoration: none;
+    background-color: rgb(16, 65, 214);
+    color: seashell;
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+
+/* cards */
+
+.gr {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px),1fr));
+    grid-auto-flow: dense;
+    grid-gap: 20px;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.card {
+    display: inline-block;
+    background-color: var(--darkColor);
+    color: var(--yellow);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card figcaption {
+    padding: 1rem;
+}
+
+.busqueda {
+    display: flex;
+    justify-content: center;
+}
+
+.reset {
+    position: relative;
+    background: none;
+    border: none;
+    left: -20px;
+    padding: 0 10px 0 0;
+}
+
+.filter {
+    display: none;
+}
+
+
+/* sorteo */
+
+.list-sorteo li {
+    list-style: none;
 }
