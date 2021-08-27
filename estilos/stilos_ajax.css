@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.titulo {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.5;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+
+#xhr, #fetch, #await, #axios, #axiosAwait {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px),1fr));
+    grid-gap: 30px;
+    margin: 50px;
+}
+
+.contain, .contain_fetch, .contain_await {
+    max-width: 500px;
+    color: white;
+    background-color: rgba(0, 0, 0, .7);
+    border: 2px solid rgba(0, 0, 0, .7);
+    height: auto;
+    hyphens: auto;
+}
+
+.contain h2 {
+    padding: 10px 20px;
+    background-color: royalblue;
+}
+
+.contain p {
+    padding: 15px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.contain_fetch {
+    background-color: unset;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.contain_fetch h2 {
+    padding: 10px 20px;
+    background-color: brown;
+}
+
+.contain_fetch p {
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+}
+
+.contain_fetch span {
+    display: block;
+    padding: 10px 20px;
+    background-color: teal;
+    color: white;
+}
+
+
+.contain_await img {
+    width: 100%;
+}
+
+.contain_await a {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+}

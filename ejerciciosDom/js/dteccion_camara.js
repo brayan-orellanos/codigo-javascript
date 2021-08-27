@@ -3,7 +3,6 @@ const d = document,
 
 export default function camara(cam) {
     const $video = d.getElementById(cam) 
-    console.log(navigator.geolocation)
 
     if(n.mediaDevices.getUserMedia) {
         let contrains = { audio: true, video: true}

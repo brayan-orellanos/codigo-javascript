@@ -17,6 +17,9 @@ import sorteo from "./sorteo.js"
 import slider from "./slider.js"
 import cambio from "./scroll_spy.js"
 import ocultar_contenido from "./ocultar_contenido.js"
+import video from "./video_inteligente.js"
+import validation from "./form_validate.js"
+import narrador from "./narrador.js"
 
 
 
@@ -50,6 +53,8 @@ d.addEventListener('DOMContentLoaded', e => {
     slider('.left', '.rigth', '.item-slider')
     cambio()
     ocultar_contenido()
+    video()
+    validation('#form-validation')
 })
 
 
@@ -61,3 +66,4 @@ d.addEventListener('keydown', e => {
 mode('.mode', 'html')
 loader('.loader')
 conexion('#msg')
+narrador()

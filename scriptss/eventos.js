@@ -18,6 +18,7 @@ button.addEventListener('click', agregarEvento)// agrega el evento
 // elimina la alerta al oprimir el boton remover evento
 const removerEvento = () => {
     button.removeEventListener('click', agregarEvento)
+    alert('se ha removido el evento del alert')
 }
 
 buttons.addEventListener('click', removerEvento)

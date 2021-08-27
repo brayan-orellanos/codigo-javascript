@@ -31,7 +31,7 @@ export default function filtro(buscar, contenedores, btnReset) {
     press()
 
     d.addEventListener('click', e => {
-    
+
         if (e.target.matches(btnReset)) {
             e.preventDefault()
             d.querySelector(buscar).value = ''

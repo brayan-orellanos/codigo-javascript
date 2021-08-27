@@ -11,7 +11,7 @@ let textos = document.getElementsByTagName('p') // selecciona todas las etiqueta
 let querys = document.querySelectorAll('.texto') // selecciona todos los elementos con el css especificado
 
 
-boton.addEventListener('click', function() {
+const newContent = function() {
     // crear nuevo elemento o nodo
 
     let newParrafo = document.createElement('p')
@@ -102,8 +102,10 @@ boton.addEventListener('click', function() {
         alert.removeChild(parrafoConfirm)
     },3000)
 
-    
-})
+    this.removeEventListener('click', newContent)
+}
+
+boton.addEventListener('click', newContent)
 
 
 

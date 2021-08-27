@@ -1,21 +1,24 @@
 const d = document
 
-export function scroll(arrow, header) {
-    const $up = d.querySelector(arrow),
-        $header = d.querySelector(header)
-
-    let posicionPrincipal = window.pageYOffset
-
-    window.addEventListener('scroll', e => {
-        // ocultar y mostrar boton de scroll
-        if (scrollY > 250) {
-            $up.classList.remove('hidden')
-        } else {
-            $up.classList.add('hidden')
+export function scroll(arrow, header, section) {
+        const $up = d.querySelector(arrow),
+            $header = d.querySelector(header),
+            $section = d.getElementById(section),
+            $contenido = d.querySelector('.xd'),
+                  // ocultar y mostrar boton de scroll
+        btnScroll = e => {
+            scrollY > 250
+                ?$up.classList.remove('hidden')
+                :$up.classList.add('hidden')
         }
 
-        // ocultar y mostrar header
-        let desplazamientoActual = window.pageYOffset
+        let posicionPrincipal = scrollY  
+
+    window.addEventListener('scroll', e => {
+        btnScroll()
+
+        // ocultar y mostrar menu
+        let desplazamientoActual = scrollY 
 
         if (posicionPrincipal >= desplazamientoActual) {
             $header.style.top = '0px'
@@ -34,6 +37,8 @@ export function scroll(arrow, header) {
             })
         }
     })
+
+    btnScroll()
 }
 
 // barra de progreso

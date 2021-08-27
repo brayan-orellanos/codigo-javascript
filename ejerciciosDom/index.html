@@ -47,6 +47,15 @@
                 <li>
                     <a href="#section11" class="item-menu" data-scroll-spy>Slider</a>
                 </li>
+                <li>
+                    <a href="#section12" class="item-menu" data-scroll-spy>Video inteligente</a>
+                </li>
+                <li>
+                    <a href="#section13" class="item-menu" data-scroll-spy>Validacion de formulario</a>
+                </li>
+                <li>
+                    <a href="#section14" class="item-menu" data-scroll-spy>Narrador</a>
+                </li>
             </ul>
         </nav>
     </aside>
@@ -234,6 +243,50 @@
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section id="section12" class="section" data-scroll-spy>
+            <div class="container">
+                <h3>Video inteligente</h3>
+                <video class="video" data-video src="../multi/video1.mp4" muted controls></video>
+                <video class="video" data-video src="../multi/video2.mp4" muted controls></video>
+                <video class="video" data-video src="../multi/video.mp4" muted controls></video>
+            </div>
+        </section>
+
+        <section id="section13" class="section" data-scroll-spy>
+            <div class="container">
+                <h3>Validacion de formulario</h3>
+                <form id="form-validation" action="https://formsubmit.co/xnoverz99@gmail.com" method="POST" target="_blank">
+
+                    <input type="text" name="name" placeholder="Escribe tu nombre"
+                        title="Este campo solo recibe letras y espacio en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                         data-required>
+                    
+                    <input type="email" name="email" placeholder="Escribe tu email" title="Email incorrecto"
+                        pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" data-required>
+                    
+                    <input type="text" name="asunto" placeholder="Asunto" title="El asunto es requerido">
+                    
+                    <textarea name="comentario" cols="30" rows="10" placeholder="Escribe tu comentario" data-pattern="^.{1,250}$" title="Tu comentario no puede exceder los 250 caracteres"  data-required></textarea>
+                    
+                    <input type="submit" value="Enviar" class="btn-form">
+                </form>
+                <img src="../multi/loader.svg" alt="loader" class="form-loader none">
+            </div>
+        </section>
+
+        <section id="section14" class="section" data-scroll-spy>
+            <h3>Narrador</h3>
+            <form action="" id="narrador">
+                <select name="voces" id="voces">
+                    <option value="" selected disabled class="option">--- Elige una voz ---</option>
+                </select>
+
+                <textarea name="texto" id="texto" cols="70" rows="10" placeholder="Escriba el texto"></textarea>
+                
+                <input type="button" name="button" value="Leer">
+            </form>
         </section>
 
         <button class="arrow-up hidden">
