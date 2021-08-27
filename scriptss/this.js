@@ -32,7 +32,7 @@ objEste.imprimir()
 
 const objEste2 = {
     nombre:'contexto objeto 2',
-    imprimir:imprimir
+    imprimir: imprimir
 }
 
 objEste2.imprimir()
@@ -43,6 +43,8 @@ const objEste3 = {
         console.log(this.nombre) // las arrow function no tienen scope local asi que toma el this global
     }
 }
+
+objEste3.imprimir()
 
 function personaEste(nombre) {
     this.nombre = nombre

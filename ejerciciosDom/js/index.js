@@ -14,6 +14,9 @@ import camara from "./dteccion_camara.js"
 import getLocation from "./geolocation.js"
 import filtro from "./filtro.js"
 import sorteo from "./sorteo.js"
+import video from "./video_inteligente.js"
+import validation from "./form_validate.js"
+import narrador from "./narrador.js"
 
 
 
@@ -44,6 +47,8 @@ d.addEventListener('DOMContentLoaded', e => {
     getLocation('location')
     filtro('#buscar', '.card', '.reset')
     sorteo('.list-sorteo', '.btn-sorteo')
+    video()
+    validation('#form-validation')
 })
 
 
@@ -55,3 +60,4 @@ d.addEventListener('keydown', e => {
 mode('.mode', 'html')
 loader('.loader')
 conexion('#msg')
+narrador()

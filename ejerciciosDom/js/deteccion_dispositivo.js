@@ -44,8 +44,6 @@ export default function deteccion(div) {
         },
     }
 
-    console.log(isMobile.android())
-
     $contenido.innerHTML =
         `
         <p class="parrafo">User Agent: ${navigator.userAgent}</p>
