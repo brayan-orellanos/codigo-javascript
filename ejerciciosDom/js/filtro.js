@@ -23,7 +23,7 @@ export default function filtro(buscar, contenedores, btnReset) {
                     : ev.classList.add('filter')
             })
         }
-        console.log(e.key)
+        // console.log(e.key)
 
         press()
     })
@@ -31,9 +31,9 @@ export default function filtro(buscar, contenedores, btnReset) {
     press()
 
     d.addEventListener('click', e => {
-        e.preventDefault()
-
+    
         if (e.target.matches(btnReset)) {
+            e.preventDefault()
             d.querySelector(buscar).value = ''
             $reset.classList.add('filter')
 

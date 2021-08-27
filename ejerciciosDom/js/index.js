@@ -14,6 +14,9 @@ import camara from "./dteccion_camara.js"
 import getLocation from "./geolocation.js"
 import filtro from "./filtro.js"
 import sorteo from "./sorteo.js"
+import slider from "./slider.js"
+import cambio from "./scroll_spy.js"
+import ocultar_contenido from "./ocultar_contenido.js"
 
 
 
@@ -23,7 +26,7 @@ d.addEventListener('DOMContentLoaded', e => {
     hamburgerMenu('.menu', '.btn', '.menu a')
     reloj('.hora','.iniciar-reloj', '.detener-reloj', '.iniciar-alarma', '.detener-alarma')
     decremento('.dec', 'november 01, 2021 00:26:00', 'se acabo el tiempo xd')
-    scroll('.arrow-up', '.header', 'section6')
+    scroll('.arrow-up', '.header')
     progress('.progreso')
     view(
         'youtube', 
@@ -44,6 +47,9 @@ d.addEventListener('DOMContentLoaded', e => {
     getLocation('location')
     filtro('#buscar', '.card', '.reset')
     sorteo('.list-sorteo', '.btn-sorteo')
+    slider('.left', '.rigth', '.item-slider')
+    cambio()
+    ocultar_contenido()
 })
 
 

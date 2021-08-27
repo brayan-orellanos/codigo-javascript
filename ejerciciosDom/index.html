@@ -15,34 +15,37 @@
         <nav class="menu oculto">
             <ul class="list-menu">
                 <li>
-                    <a href="#section1" class="item-menu">Reloj y alarma</a>
+                    <a href="#section1" class="item-menu" data-scroll-spy>Reloj y alarma</a>
                 </li>
                 <li>
-                    <a href="#section2" class="item-menu">Eventos del teclado</a>
+                    <a href="#section2" class="item-menu" data-scroll-spy>Eventos del teclado</a>
                 </li>
                 <li>
-                    <a href="#section3" class="item-menu">Decremento</a>
+                    <a href="#section3" class="item-menu" data-scroll-spy>Decremento</a>
                 </li>
                 <li>
-                    <a href="#section4" class="item-menu">Responsive con js</a>
+                    <a href="#section4" class="item-menu" data-scroll-spy>Responsive con js</a>
                 </li>
                 <li>
-                    <a href="#section5" class="item-menu">tester</a>
+                    <a href="#section5" class="item-menu" data-scroll-spy>tester</a>
                 </li>
                 <li>
-                    <a href="#section6" class="item-menu">Deteccion de dispositivos</a>
+                    <a href="#section6" class="item-menu" data-scroll-spy>Deteccion de dispositivos</a>
                 </li>
                 <li>
-                    <a href="#section7" class="item-menu">Deteccion de camara</a>
+                    <a href="#section7" class="item-menu" data-scroll-spy>Deteccion de camara</a>
                 </li>
                 <li>
-                    <a href="#section8" class="item-menu">Deteccion geolocacion</a>
+                    <a href="#section8" class="item-menu" data-scroll-spy>Deteccion geolocacion</a>
                 </li>
                 <li>
-                    <a href="#section9" class="item-menu">Filtro</a>
+                    <a href="#section9" class="item-menu" data-scroll-spy>Filtro</a>
                 </li>
                 <li>
-                    <a href="#section10" class="item-menu">Sorteo digital</a>
+                    <a href="#section10" class="item-menu" data-scroll-spy>Sorteo digital</a>
+                </li>
+                <li>
+                    <a href="#section11" class="item-menu" data-scroll-spy>Slider</a>
                 </li>
             </ul>
         </nav>
@@ -71,7 +74,7 @@
             <progress class="progreso" value="0"></progress>
         </header>
 
-        <section id="section1" class="section">
+        <section id="section1" class="section" data-scroll-spy>
             <div class="container">
                 <h3>Reloj y alarma</h3>
                 <div class="contener">
@@ -86,7 +89,7 @@
             </div>
         </section>
 
-        <section id="section2" class="section">
+        <section id="section2" class="section" data-scroll-spy>
             <div class="container">
                 <h3>Eventos del teclado</h3>
                 <div class="cuadro">
@@ -95,14 +98,14 @@
             </div>
         </section>
 
-        <section id="section3" class="section">
+        <section id="section3" class="section" data-scroll-spy>
             <div class="container">
                 <h3>Decremento</h3>
                 <p class="dec"></p>
             </div>
         </section>
 
-        <section id="section4" class="section">
+        <section id="section4" class="section" data-scroll-spy>
             <div class="container">
                 <h3>Responsive con js</h3>
                 <div id="youtube"></div>
@@ -110,7 +113,7 @@
             </div>
         </section>
 
-        <section id="section5" class="section">
+        <section id="section5" class="section" data-scroll-spy>
             <div class="conatiner">
                 <h3>Tester</h3>
                 <form action="" id="form-tester">
@@ -132,28 +135,28 @@
             </div>
         </section>
 
-        <section id="section6" class="section">
-            <div class="container ct2 xd">
+        <section id="section6" class="section" data-scroll-spy>
+            <div class="container xd ct2" data-ocultar data-left>
                 <h3>Deteccion de dispositivos</h3>
                 <div class="contenido"></div>
             </div>
         </section>
 
-        <section id="section7" class="section">
+        <section id="section7" class="section" data-scroll-spy>
             <div class="container">
                 <h3>Deteccion de camara</h3>
                 <video src="" id="cam"></video>
             </div>
         </section>
 
-        <section id="section8" class="section">
+        <section id="section8" class="section" data-scroll-spy>
             <div class="container">
                 <h3>Deteccion geolocacion</h3>
                 <div id="location"></div>
             </div>
         </section>
 
-        <section id="section9" class="cards section">
+        <section id="section9" class="cards section" data-scroll-spy>
             <div class="container">
                 <h3>Filtro</h3>
                 <form class="busqueda">
@@ -194,7 +197,7 @@
             </div>
         </section>
 
-        <section id="section10" class="section">
+        <section id="section10" class="section" data-scroll-spy>
             <h3>Sorteo digital</h3>
             <div class="container">
                 <ul class="list-sorteo">
@@ -208,6 +211,28 @@
                     <li>Perl</li>
                 </ul>
                 <button class="btn-sorteo">Obtener ganador</button>
+            </div>
+        </section>
+
+        <section id="section11" class="section" data-scroll-spy>
+            <div class="container">
+                <h3>Slider</h3>
+                <div class="container-slider">
+                    <img src="../multi/img1.jpg" alt="" class="item-slider slider-ver">
+                    <img src="../multi/img2.jpg" alt="" class="item-slider">
+                    <img src="../multi/img3.jpg" alt="" class="item-slider">
+                    <img src="../multi/img4.jpg" alt="" class="item-slider">
+                    <div class="item-slider">
+                        <h3>2</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt totam voluptatum velit
+                            quibusdam eum id nihil excepturi aperiam consectetur in nemo exercitationem iusto ut sequi,
+                            nesciunt aspernatur eligendi aliquid architecto.</p>
+                    </div>
+                    <div class="btns">
+                        <button class="left">&laquo;</button>
+                        <button class="rigth">&raquo;</button>
+                    </div>
+                </div>
             </div>
         </section>
 
