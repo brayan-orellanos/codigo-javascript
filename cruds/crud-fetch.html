@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="crud-ajax.css">
+    <title>crud fetch</title>
+</head>
+<body>
+    <main>
+        <h1>CRUD API REST CON FETCH</h1>
+        <section class="crud">
+            <article>
+                <h2 class="crud-title" id="crud-title">Agregar santos</h2>
+                <form class="crud-form">
+                    <input type="text" name="nombre" id="nombre" placeholder="nombre" required>
+                    <label for="nombre" class="labelNombre"></label>
+
+                    <input type="text" name="constelacion" id="constelacion" placeholder="constelacion" required>
+                    <label for="constelacion" class="labelConstelacion"></label>
+
+                    <input type="submit" value="Enviar" class="button">
+                    <input type="hidden" name="id">
+                </form>
+            </article>
+
+            <article>
+                <h2 class="crud-title">Ver santos</h2>
+                <table id="crud-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Constelacion</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody></tbody>
+                </table>
+            </article>
+        </section>
+
+        <template id="crud-template">
+            <tr>
+                <td class="name"></td>
+                <td class="constelacion"></td>
+                <td class="buttons">
+                    <button class="editar">Editar</button>
+                    <button class="eliminar">Eliminar</button>
+                </td>
+            </tr>
+        </template>
+    </main>
+
+    <script src="crud-js/crud-fetch.js"></script>
+</body>
+</html>
