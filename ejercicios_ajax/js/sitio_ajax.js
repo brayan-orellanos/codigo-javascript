@@ -1,5 +1,5 @@
 const d = document,
-    $main = d.querySelector('main');
+    $main = d.querySelector('.cont');
 
 const getHTML = (options) => {
     let {

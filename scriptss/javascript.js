@@ -63,7 +63,7 @@ console.log(colores.indexOf('VERDE')) /* indica la posicion en la que se encuent
 colores.push('negro')/* push sirve para añadir elementos a una lista, añade al final */
 console.log(colores)
 
-colores.pop()/* pop sirve para quitar elementos de una lista, el ultimo */
+colores.pop()/* pop sirve para quitar el ultimo elemento de una lista, el ultimo */
 console.log(colores)
 
 colores.shift()/* shift elimina el primer elemento del array */
@@ -124,6 +124,11 @@ console.log(buscar2)
 /* some solo devuelve true o false, como una pregunta si incluye algo */
 const pregunta = productos.some( producto => producto.valor <= 700)
 console.log(pregunta)
+
+/* Every devuelve true si todos los items del arreglo cumplen la condicion */
+const verificacion = productos.every( producto => producto.valor >= 100)
+console.log(verificacion)
+
 console.groupEnd()
 
 
@@ -354,7 +359,6 @@ for (let i = 1; i <= 10; i++){
 for (let i = 1; i <= 10 ; i++){
     if (i % 2 !== 0) continue
     console.log(` ${i} es un numero par`)
-  
 }
 
 
@@ -803,7 +807,7 @@ set.clear()
 console.log(set)// reiniciar set
 
 // map
-const mapa = new Map() // con map se crea lo que sira como un diccionario
+const mapa = new Map() // con map se crea lo que seria como un diccionario
 
 mapa.set('nombre','brayan')
 mapa.set('edad','21')

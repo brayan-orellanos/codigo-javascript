@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="peli.css">
+    <title>Pelis</title>
+</head>
+<body>
+    <div class="contain-loader">
+        <img src="../../multi/loader.svg" alt="Cargando..." class="loader">
+    </div>
+
+    <header class="header">
+        <div class="container-menu container">
+            <h1><span>🎬</span> Programs</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="contain_bread">
+            <ul class="bread container">
+                <li><a href="http://127.0.0.1:5500/api-pelis/api.html">Home</a></li>
+            </ul>
+        </div>
+        
+        <div class="container">
+            <section class="show">
+                <h1 class="name"></h1>
+                <article id="show_content"></article>
+
+                <hr>
+
+                <article id="cast">
+                    <div class="head">
+                        <h2 class="title">Cast</h2>
+                        <div class="pasar">
+                            <span class="prev">◀️</span>
+                            <span class="next">▶️</span>
+                        </div>
+                    </div>
+                    <div id="content_cast"></div>
+                </article>
+
+                <hr>
+
+                <article id="gallery">
+                    <h2 class="title">Gallery</h2>
+                    <div id="content_gallery"></div>
+                </article>
+
+                <hr>
+            </section>
+        </div>
+    </main>
+
+
+    <template id="template_info">
+        <article class="info">
+            <div class="content">
+                <img class="poster">
+                <div class="content_range">
+                    <span class="calif"></span>
+                    <span class="range"></span>
+                </div>
+            </div>
+
+            <div class="sumary"></div>
+
+            <div class="content_inf">
+                <h2>Program info</h2>
+                <ul>
+                    <li class="country"></li>
+                    <li class="zone"></li>
+                    <li class="generos"></li>
+                    <li class="type"></li>
+                    <li class="schedule"></li>
+                    <li class="premiered"></li>
+                    <li class="status"></li>
+                </ul>
+            </div>
+        </article>
+    </template>
+
+    <template id="template_gallery">
+        <figure class="figure">
+            <img class="img">
+        </figure>
+    </template>
+
+    <template id="template_cast">
+        <div class="people">
+            <figure>
+                <img class="cast_img">
+                <figcaption class="cast_name"></figcaption>
+            </figure>
+
+            <div class="cast_info">
+                <ul>
+                    <li class="gender"></li>
+                    <li class="age"></li>
+                    <li class="birthday"></li>
+                    <li class="born"></li>                
+                </ul>
+            </div>
+        </div>
+    </template>
+
+    <script src="peli.js"></script>
+</body>
+</html>

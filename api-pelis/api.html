@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="api.css">
+    <title>Movies</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container-menu container">
+            <h1><span>🎬</span> Programs</h1>
+            <form class="search" id="search" autocomplete="off">
+                <input type="search" placeholder="Buscar" class="busqueda" name="buscar">
+                <input type="submit" value="🔍" class="buscar">
+            </form>
+        </div>
+    </header>
+    <main>
+
+        <div class="contain-loader none">
+            <img src="../../multi/loader.svg" alt="Cargando..." class="loader">
+        </div>
+
+        <section class="filtros">
+            <div class="container">
+                <h2>Filtrar por:</h2>
+                <div class="filtro">
+                    <div>
+                        <label>Gener</label>
+                        <select name="gen" id="gen" class="select-css">
+                            <option value="0" selected>Selected</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label>Type</label>
+                        <select name="type" id="type" class="select-css">
+                            <option value="0" selected>Selected</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label>City</label>
+                        <select name="city" id="city" class="select-css">
+                            <option value="0" selected>Selected</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label>Country</label>
+                        <select name="pais" id="pais" class="select-css">
+                            <option value="0" selected>Selected</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="pagin">
+            <ul class="pagination">
+                <li><button id="prev">«</button></li>
+                <li><button class="pag active">1</button></li>
+                <li><button class="pag">2</button></li>
+                <li><button class="pag">3</button></li>
+                <li><button class="pag">4</button></li>
+                <li><button class="pag">5</button></li>
+                <li><button id="next">»</button></li>
+              </ul>
+        </div>
+
+        <section class="pelis container"></section>
+
+        <div class="pagin">
+            <ul class="pagination">
+                <li><button id="prev">«</button></li>
+                <li><button class="pag active">1</button></li>
+                <li><button class="pag">2</button></li>
+                <li><button class="pag">3</button></li>
+                <li><button class="pag">4</button></li>
+                <li><button class="pag">5</button></li>
+                <li><button id="next">»</button></li>
+              </ul>
+        </div>
+
+        <template class="template">
+            <figure class="figure" data-num>
+                <img class="img">
+                <figcaption class="figcaption"></figcaption>
+            </figure>
+        </template>
+
+    </main>
+    
+    <script src="api.js"></script>
+</body>
+
+</html>

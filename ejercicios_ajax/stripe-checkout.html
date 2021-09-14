@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stiles/stripe_checktout.css">
+    <title>Productos</title>
+</head>
+<body>
+    <main>
+        <h1>Checkout con Stripe</h1>
+        <section id="electronicos" class="electronicos"></section>
+    
+        <template id="template">
+            <figure class="electronico">
+                <img class="template-img">
+                <figcaption class="template-title"></figcaption>
+            </figure>
+        </template>
+    </main>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="js/stripe_checkout.js" type="module"></script>
+</body>
+</html>

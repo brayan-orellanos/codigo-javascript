@@ -29,7 +29,6 @@ $linkDom.removeAttribute("rel")
 console.log($linkDom.hasAttribute("rel"))
 
 // data-atributes
-
 console.log($linkDom.getAttribute("data-description"))
 
 

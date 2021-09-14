@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stiles/validation_ajax.css">
+    <title>Validacion de formulario</title>
+</head>
+
+<body>
+    <main>
+        <section class="container">
+            <h3>Envio de formulario con fetch</h3>
+            <form id="form-validation">
+
+                <input type="text" name="name" placeholder="Escribe tu nombre"
+                    title="Este campo solo recibe letras y espacio en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                    data-required>
+
+                <input type="email" name="email" placeholder="Escribe tu email" title="Email incorrecto"
+                    pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" data-required>
+
+                <input type="text" name="asunto" placeholder="Asunto" title="El asunto es requerido">
+
+                <textarea name="comentario" cols="30" rows="10" placeholder="Escribe tu comentario"
+                    data-pattern="^.{1,250}$" title="Tu comentario no puede exceder los 250 caracteres"
+                    data-required></textarea>
+
+                <input type="submit" value="Enviar" class="btn-form">
+            </form>
+            <img src="../multi/loader.svg" alt="loader" class="form-loader none">
+            <p class="response none"></p>
+        </section>
+    </main>
+
+    <script src="js/form_validate.js"></script>
+</body>
+
+</html>

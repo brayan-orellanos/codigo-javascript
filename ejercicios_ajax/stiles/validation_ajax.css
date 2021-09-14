@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --primary-color: rgb(198, 198, 5);
+    --secundary-color: rgb(20, 20, 20);
+    --background: rgb(230, 230, 230);
+    --yellow: yellow;
+    --darkColor: #222;
+    --form-ok: rgb(2, 94, 2);
+    --form-error: rgb(228, 0, 0);
+}
+
+.container {
+    width: 1200px;
+    max-width: 90vw;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 50px 0;
+    text-align: center;
+}
+
+/* Formulario */
+#form-validation {
+    margin-bottom: 20px;
+}
+
+#form-validation input, #form-validation textarea {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 20px;
+    border-radius: 5px;
+    resize: none;
+    border: thin solid black;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+#form-validation .btn-form {
+    display: block;
+    margin: 0 auto;
+    padding: 5px;
+    width: 50%;
+    font-size: medium;
+    font-weight: 400;
+    margin-top: 20px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#form-validation .valid {
+    border: 2px solid var(--form-ok);
+    outline: none;
+}
+
+#form-validation .invalid {
+    border: 2px solid var(--form-error);
+    outline: none;
+}
+
+.error {
+    position: relative;
+    display: block;
+    top: -2px;
+    font-size: 60%;
+    background-color: var(--form-error);
+    color: white;
+    transition: all 800ms ease;
+    padding: .5rem;
+}
+
+
+.error.active {
+    display: block;
+    animation: message 1s 1 normal 0s ease-out both;
+}
+
+.none {
+    display: none;
+}
+
+@keyframes message {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
