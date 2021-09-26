@@ -1,24 +1,91 @@
 (() => {
     const d = document,
-        $showContent = d.getElementById('show_content'),
-        $name = d.querySelector('.name'),
         $template = d.getElementById('template_info').content,
         $template2 = d.getElementById('template_gallery').content,
-        $fragment2 = d.createDocumentFragment(),
-        $fragment = d.createDocumentFragment(),
-        $bread = d.querySelector('.bread'),
-        $gallery = d.getElementById('content_gallery'),
-        $loader = d.querySelector('.contain-loader'),
         $templateCast = d.getElementById('template_cast').content,
+        $templateEpisodes = d.getElementById('template_episodes').content,
+        $templateCrew = d.getElementById('template_crew').content,
+        $fragment = d.createDocumentFragment(),
+        $fragment2 = d.createDocumentFragment(),
         $fragmentCast = d.createDocumentFragment(),
-        $cast = d.getElementById('content_cast')
-        
-    let muyPequeño = window.matchMedia("(max-width: 660px)")
+        $fragmentEpisodes = d.createDocumentFragment(),
+        $fragmentCrew = d.createDocumentFragment(),
+        $loader = d.querySelector('.contain-loader'),
+        $bread = d.querySelector('.bread'),
+        $name = d.querySelector('.name'),
+        $showContent = d.getElementById('show_content'),
+        $gallery = d.getElementById('content_gallery'),
+        $cast = d.getElementById('content_cast'),
+        $tbody = d.querySelector('.episodes_tbody'),
+        $season = d.getElementById('season_select'),
+        $crew = d.getElementById('content_crew')
 
+    let muyPequeño = window.matchMedia("(max-width: 660px)"),
+        pequeño = window.matchMedia("(max-width: 890px)"),
+        mediano = window.matchMedia("(max-width: 1200px)"),
+        grande = window.matchMedia("(max-width: 1310px)"),
+        muyGrande = window.matchMedia("(min-width: 1321px)")
 
     let num = localStorage.getItem('num'),
-        pos = null
+        temporada = new Set(),
+        cargado = true,
+        pos = null,
+        number = null,
+        number2 = null,
+        valor = false
 
+
+    const media = (n, v) => {
+        if (!muyPequeño.matches && !pequeño.matches && !mediano.matches && !grande.matches && muyGrande && n > 5) {
+            d.querySelector(v).style.display = 'block'
+            pos = 20
+            valor = true
+            inter
+        } else if (!muyPequeño.matches && !pequeño.matches && !mediano.matches && !grande.matches && muyGrande && n <= 5) {
+            valor = false
+            d.querySelector(v).style.display = 'none'
+        }
+
+        if (!muyPequeño.matches && !pequeño.matches && !mediano.matches && grande.matches && n > 4) {
+            d.querySelector(v).style.display = 'block'
+            pos = 25
+            valor = true
+            inter
+        } else if (!muyPequeño.matches && !pequeño.matches && !mediano.matches && grande.matches && n <= 4) {
+            valor = false
+            d.querySelector(v).style.display = 'none'
+        }
+
+        if (!muyPequeño.matches && !pequeño.matches && mediano.matches && grande.matches && n > 3) {
+            d.querySelector(v).style.display = 'block'
+            pos = 33
+            valor = true
+            inter
+        } else if (!muyPequeño.matches && !pequeño.matches && mediano.matches && grande.matches && n <= 3) {
+            valor = false
+            d.querySelector(v).style.display = 'none'
+        }
+
+        if (!muyPequeño.matches && pequeño.matches && mediano.matches && grande.matches && n > 2) {
+            d.querySelector(v).style.display = 'block'
+            pos = 50
+            valor = true
+            inter
+        } else if (!muyPequeño.matches && pequeño.matches && mediano.matches && grande.matches && n <= 2) {
+            valor = false
+            d.querySelector(v).style.display = 'none'
+        }
+
+        if (muyPequeño.matches && pequeño.matches && mediano.matches && grande.matches && n > 1) {
+            d.querySelector(v).style.display = 'block'
+            pos = 100
+            valor = true
+            inter
+        } else if (muyPequeño.matches && pequeño.matches && mediano.matches && grande.matches && n <= 1) {
+            valor = false
+            d.querySelector(v).style.display = 'none'
+        }
+    }
 
     const contenido = async () => {
         try {
@@ -104,8 +171,6 @@
             let res = await fetch(`https://api.tvmaze.com/shows/${num}/cast`),
                 json = await res.json()
 
-            console.log(json)
-
             if (!res.ok) throw {
                 status: res.status,
                 statusText: res.statusText
@@ -119,9 +184,9 @@
                 $templateCast.querySelector('.people').id = pos
                 $templateCast.querySelector('.cast_img').src = el.person.image ? el.person.image.medium : 'https://static.tvmaze.com/images/no-img/no-img-portrait-text.png'
                 $templateCast.querySelector('.cast_img').alt = el.person.name
-                $templateCast.querySelector('.cast_name').innerHTML = `<p>${el.person.name} <span class="is">as</span> ${el.character.name}</p>`
+                $templateCast.querySelector('.cast_name').innerHTML = `<p><a href="${el.person.url}" class="cast_n rel="noopener" target="_blank">${el.person.name}</a><span class="is"> as</span> ${el.character.name}</p>`
 
-                $templateCast.querySelector('.gender').innerHTML = `<b>Gender:</b> ${el.person.gender}`
+                $templateCast.querySelector('.gender').innerHTML = el.person.gender ? `<b>Gender:</b> ${el.person.gender}` : ''
                 $templateCast.querySelector('.age').innerHTML = el.person.birthday ? `<b>Age:</b> ${Math.floor(edad / (1000*60*60*24*30*12))}` : ''
                 $templateCast.querySelector('.birthday').innerHTML = el.person.birthday ? `<b>Birthday:</b> ${el.person.birthday}` : ''
                 $templateCast.querySelector('.born').innerHTML = el.person.country ? `<b>Born In:</b> ${el.person.country.name}` : ''
@@ -133,69 +198,155 @@
 
             $cast.appendChild($fragmentCast)
 
-            let $people = d.querySelector('.people')
-            pos = Number(parseInt(getComputedStyle($people).getPropertyValue("width").slice(0, -2)))
+            number = json.length
+
+            media(number, '.pasar')
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+
+    const seasons = async (pos) => {
+        try {
+            let res = await fetch(`https://api.tvmaze.com/shows/${num}/seasons`),
+                json = await res.json()
+
+            if (!res.ok) throw {
+                status: res.status,
+                statusText: res.statusText
+            }
+
+            d.querySelector('.season_img').src = json[pos - 1].image ? json[pos - 1].image.medium : 'https://static.tvmaze.com/images/no-img/no-img-portrait-text.png'
 
         } catch (err) {
             console.log(err)
         }
     }
-    
-    const izquierda = () => {
-        if(muyPequeño.matches){
-            $cast.style.transition = 'all 1s ease';
-            $cast.style.left = `-${pos+pos+(pos*0.15)}px`
-    
+
+
+    const episodes = async (pos) => {
+        try {
+            $tbody.innerHTML = ''
+            let res = await fetch(`https://api.tvmaze.com/shows/${num}/episodes`),
+                json = await res.json()
+
+            if (!res.ok) throw {
+                status: res.status,
+                statusText: res.statusText
+            }
+
+            json.forEach(el => {
+                temporada.add(el.season)
+
+                if (el.season === pos) {
+                    $templateEpisodes.querySelector('.episodes_num').textContent = `${el.season}x${el.number}`
+                    $templateEpisodes.querySelector('.episodes_name').innerHTML = `<a href="${el.url}" rel="noopener" target="_blank">${el.name}</a>`
+                    $templateEpisodes.querySelector('.episodes_summary').innerHTML = el.summary ? el.summary : 'Not summary'
+                    $templateEpisodes.querySelector('.episodes_img').src = el.image ? el.image.medium : 'https://static.tvmaze.com/images/no-img/no-img-portrait-text.png'
+
+                    let clone = d.importNode($templateEpisodes, true)
+                    $fragmentEpisodes.appendChild(clone)
+                }
+            })
+
+            $tbody.appendChild($fragmentEpisodes)
+
+            if (cargado) {
+                Array.from(temporada).forEach(el => {
+                    const $option = d.createElement('option')
+
+                    $option.value = el
+                    $option.innerHTML = `Season ${el}`
+
+                    $season.appendChild($option)
+                })
+            }
+
+            cargado = false
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+
+    const crew = async () => {
+        try {
+            let res = await fetch(`https://api.tvmaze.com/shows/${num}/crew`),
+                json = await res.json()
+
+            if (!res.ok) throw {
+                status: res.status,
+                statusText: res.statusText
+            }
+console.log(json)
+            json.forEach((el, pos) => {
+                let fecha1 = new Date(el.person.birthday),
+                    fecha2 = new Date(),
+                    edad = fecha2.getTime() - fecha1.getTime()
+
+                $templateCrew.querySelector('.people').id = pos
+                $templateCrew.querySelector('.crew_img').src = el.person.image ? el.person.image.medium : 'https://static.tvmaze.com/images/no-img/no-img-portrait-text.png'
+                $templateCrew.querySelector('.crew_img').alt = el.person.name
+                $templateCrew.querySelector('.crew_name').innerHTML = `<p><a href="${el.person.url}" class="crew_n rel="noopener" target="_blank">${el.person.name}</a><span class="is"> charge</span> ${el.type}</p>`
+
+                $templateCrew.querySelector('.gender').innerHTML = el.person.gender ? `<b>Gender:</b> ${el.person.gender}` : ''
+                $templateCrew.querySelector('.age').innerHTML = el.person.birthday ? `<b>Age:</b> ${Math.floor(edad / (1000*60*60*24*30*12))}` : ''
+                $templateCrew.querySelector('.birthday').innerHTML = el.person.birthday ? `<b>Birthday:</b> ${el.person.birthday}` : ''
+                $templateCrew.querySelector('.born').innerHTML = el.person.country ? `<b>Born In:</b> ${el.person.country.name}` : ''
+
+                let clone = d.importNode($templateCrew, true)
+
+                $fragmentCrew.appendChild(clone)
+            })
+
+            $crew.appendChild($fragmentCrew)
+
+            number2 = json.length
+
+            media(number2, '.pasar2')
+        } catch(err) {
+            console.log(err)
+        }
+    }
+
+
+    const izquierda = (element) => {
+        if (valor && pos) {
+            element.style.transition = 'all 1s ease'
+            element.style.left = `-${pos}%`
+
             setTimeout(e => {
-                const $first = $cast.firstElementChild
-                $cast.insertAdjacentElement('beforeend', $first)
-    
-                $cast.style.transition = 'unset';
-                $cast.style.left = `-${pos+(pos*0.07)}px`
-            }, 1000)
-        } else {
-            $cast.style.transition = 'all 1s ease';
-            $cast.style.left = `-${pos+pos+(pos*0.23)}px`
-    
-            setTimeout(e => {
-                const $first = $cast.firstElementChild
-                $cast.insertAdjacentElement('beforeend', $first)
-    
-                $cast.style.transition = 'unset';
-                $cast.style.left = `-${pos+(pos*0.12)}px`
+                const $first = element.firstElementChild
+                element.insertAdjacentElement('beforeend', $first)
+
+                element.style.transition = 'unset';
+                element.style.left = `0`
             }, 1000)
         }
     }
 
-    const derecha = () => {
-        if(muyPequeño.matches){
-            $cast.style.transition = 'all 1s ease';
-            $cast.style.left = `0`
-                
-            setTimeout(e => {
-                const $first = $cast.lastElementChild
-                $cast.insertAdjacentElement('afterbegin', $first)
+    const derecha = (element) => {
+        if (valor) {
+            const $first = element.lastElementChild
+            element.insertAdjacentElement('afterbegin', $first)
 
-                $cast.style.transition = 'unset';
-                $cast.style.left = `-${(pos)+(pos*0.15)}px`
-            }, 1000)
-        } else {
-            $cast.style.transition = 'all 1s ease';
-            $cast.style.left = `0`
-                
-            setTimeout(e => {
-                const $first = $cast.lastElementChild
-                $cast.insertAdjacentElement('afterbegin', $first)
+            element.style.transition = 'unset';
+            element.style.left = `-${pos}%`
 
-                $cast.style.transition = 'unset';
-                $cast.style.left = `-${pos+(pos*0.15)}px`
-            }, 1000)
+            setTimeout(e => {
+                element.style.transition = 'all 1s ease'
+                element.style.left = `0`
+            }, 100)
         }
     }
 
-    let inter = setInterval(izquierda, 5000);
-   
-    window.addEventListener( 'load', e => {
+    let inter = setInterval(() => {
+        izquierda($cast)
+        izquierda($crew)
+    }, 4000);
+
+    window.addEventListener('load', e => {
         $loader.classList.add('none')
     })
 
@@ -203,39 +354,59 @@
         contenido()
         gallery()
         cast()
-        inter
+        seasons(1)
+        episodes(1)
+        crew()
     })
 
     d.addEventListener('click', e => {
         if (e.target.matches('.next')) {
-            izquierda()
+            izquierda($cast)
             clearInterval(inter)
-            inter = setInterval(izquierda,5000)
+            inter = setInterval(() => {
+                izquierda($cast)
+                izquierda($crew)
+            }, 4000);
         }
 
-        if(e.target.matches('.prev')) {
-            derecha()
+        if (e.target.matches('.prev')) {
+            derecha($cast)
             clearInterval(inter)
-            inter = setInterval(izquierda,5000)
+            inter = setInterval(() => {
+                izquierda($cast)
+                izquierda($crew)
+            }, 4000);
+        }
+
+        if (e.target.matches('.next2')) {
+            izquierda($crew)
+            clearInterval(inter)
+            inter = setInterval(() => {
+                izquierda($cast)
+                izquierda($crew)
+            }, 4000);
+        }
+
+        if (e.target.matches('.prev2')) {
+            derecha($crew)
+            clearInterval(inter)
+            inter = setInterval(() => {
+                izquierda($cast)
+                izquierda($crew)
+            }, 4000);
         }
     })
+
+    d.addEventListener('change', e => {
+        if (e.target.matches('#season_select')) {
+            seasons(Number(e.target.value))
+            episodes(Number(e.target.value))
+            console.log(e.target.value)
+        }
+    })
+
 })()
 
 
 // personas encargadas
 //' https://api.tvmaze.com/shows/1/crew'
-
-
-// elenco
-// 'https://api.tvmaze.com/shows/1/cast'
-
-// temporadas
-// 'https://api.tvmaze.com/shows/1/seasons'
-
-// episodios
-// https://api.tvmaze.com/seasons/1/episodes
-
-
-// imagenes
-
-// 'https://api.tvmaze.com/shows/1/images'

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="peli.css">
     <title>Pelis</title>
 </head>
+
 <body>
     <div class="contain-loader">
         <img src="../../multi/loader.svg" alt="Cargando..." class="loader">
@@ -24,7 +26,7 @@
                 <li><a href="http://127.0.0.1:5500/api-pelis/api.html">Home</a></li>
             </ul>
         </div>
-        
+
         <div class="container">
             <section class="show">
                 <h1 class="name"></h1>
@@ -39,8 +41,32 @@
                             <span class="prev">◀️</span>
                             <span class="next">▶️</span>
                         </div>
-                    </div>
+                    </div>                    
+                    
                     <div id="content_cast"></div>
+                </article>
+
+                <hr>
+
+                <article class="episodios">
+                    <h2 class="title">Episodes</h2>
+                    <div class="selects">
+                        <img class="season_img">
+                        <select id="season_select" class="select-css"></select>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr class="table_head">
+                                <th>N°</th>
+                                <th>Img</th>
+                                <th>Summary</th>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+
+                        <tbody class="episodes_tbody"></tbody>
+                    </table>
                 </article>
 
                 <hr>
@@ -51,6 +77,18 @@
                 </article>
 
                 <hr>
+
+                <article id="crew">
+                    <div class="head">
+                        <h2 class="title">Crew</h2>
+                        <div class="pasar2">
+                            <span class="prev2">◀️</span>
+                            <span class="next2">▶️</span>
+                        </div>
+                    </div>                    
+                    
+                    <div id="content_crew"></div>
+                </article>
             </section>
         </div>
     </main>
@@ -101,7 +139,35 @@
                     <li class="gender"></li>
                     <li class="age"></li>
                     <li class="birthday"></li>
-                    <li class="born"></li>                
+                    <li class="born"></li>
+                </ul>
+            </div>
+        </div>
+    </template>
+
+
+    <template id="template_episodes">
+        <tr class="contain_table">
+            <td class="episodes_num"></td>
+            <td><img class="episodes_img"></td>
+            <td class="episodes_summary"></td>
+            <td class="episodes_name"></td>
+        </tr>
+    </template>
+
+    <template id="template_crew">
+        <div class="people">
+            <figure>
+                <img class="crew_img">
+                <figcaption class="crew_name"></figcaption>
+            </figure>
+
+            <div class="crew_info">
+                <ul>
+                    <li class="gender"></li>
+                    <li class="age"></li>
+                    <li class="birthday"></li>
+                    <li class="born"></li>
                 </ul>
             </div>
         </div>
@@ -109,4 +175,5 @@
 
     <script src="peli.js"></script>
 </body>
+
 </html>
