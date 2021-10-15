@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estados</title>
+    <style>
+        main {
+            display: inline-block;
+        }
+
+        .loader {
+            display: block;
+            margin: 15px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Selects anidados</h1>
+        <div class="container_estados">
+            <h2>Estados</h2>
+            <select name="slect" id="estados">
+                <option selected disabled>Selecciona un estado</option>
+            </select>
+        </div>
+
+        <div class="container_municipios">
+            <h2>Municipios</h2>
+            <select name="slect" id="municipios">
+                <option selected disabled>Selecciona un municipio</option>
+            </select>
+        </div>
+
+        <img src="../../multi/loader.svg" alt="Cargando..." class="loader">
+    </main>
+    <script src="js/obtener_estados.js"></script>
+</body>
+
+</html>

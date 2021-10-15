@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="TestApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wp-api-rest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stiles/wp-api-rest.css">
+</head>
+
+<body ng-controller="testCtrl">
+    <h1>WordPress Rest Api</h1>
+
+    <article id="site" class="site"></article>
+
+    <section id="post" class="post"></section>
+
+    <img class="loader" src="../multi/loader.svg"></img>
+
+    <template id="post-template">
+        <article class="content-post">
+            <img class="post-img">
+            <aside>
+                <h2 class="post-title"></h2>
+                <figure class="post-author"></figure>
+
+                <small class="post-date"></small>
+                <a class="post-link" target="_blank">Ver publicacion original</a>
+                <p class="post-excerpt"></p>
+                <div class="post-categories"></div>
+                <div class="post-tags"></div>
+
+                <details class="post-content">
+                    <summary>Ver contenido de la publicacion</summary>
+                    <article></article>
+                </details>
+            </aside>
+        </article>
+        <hr>
+    </template>
+
+    <script src="./js/wp-api-rest.js"></script>
+</body>
+
+</html>
